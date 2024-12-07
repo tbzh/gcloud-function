@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.0.0",        
+    "@google-cloud/storage": "^7.14.0",   
+    "@sparticuz/chromium": "^129.0.0",
+    "puppeteer-core": "^23.6.0"
+  }
+}
