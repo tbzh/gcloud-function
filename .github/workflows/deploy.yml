@@ -1,0 +1,27 @@
+on: [push]
+jobs:
+  job_id:
+    runs-on: 'ubuntu-latest'
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+    - uses: 'actions/checkout@v4'
+
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v2'
+      with:
+        project_id: 'my-project'
+        workload_identity_provider: 'projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
+
+    - id: 'deploy'
+      uses: 'google-github-actions/deploy-cloud-functions@v3'
+      timeout-minutes: 10
+      with:
+        name: 'my-function'
+        runtime: 'nodejs22'
+
+    # Example of using the output
+    - id: 'test'
+      run: 'curl "${{ steps.deploy.outputs.url }}"'
