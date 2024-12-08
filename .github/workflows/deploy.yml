@@ -24,6 +24,7 @@ jobs:
         runtime: 'nodejs22'
         entry_point: 'screenshot'
         region: 'asia-southeast1'
+        memory: '512Mib'
 
     # Example of using the output
     - id: 'test'
