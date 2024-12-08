@@ -74,4 +74,4 @@ async function screenshot(url = 'https://www.google.com') {
   }
 };
 
-screenshot();
+// screenshot();
