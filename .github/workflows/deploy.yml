@@ -22,6 +22,7 @@ jobs:
       with:
         name: '${{ secrets.FUNCTION_NAME }}'
         runtime: 'nodejs22'
+        entry_point: 'screenshot'
 
     # Example of using the output
     - id: 'test'
