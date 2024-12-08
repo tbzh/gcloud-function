@@ -23,7 +23,7 @@ jobs:
         name: '${{ secrets.FUNCTION_NAME }}'
         runtime: 'nodejs22'
         entry_point: 'screenshot'
-        region: 'ap-southeast1'
+        region: 'asia-southeast1'
 
     # Example of using the output
     - id: 'test'
