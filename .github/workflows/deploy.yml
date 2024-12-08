@@ -12,7 +12,7 @@ jobs:
     - id: 'auth'
       uses: 'google-github-actions/auth@v2'
       with:
-        project_id: 'Experimental'
+        project_id: '${{ secrets.PROJECT_NAME }}'
         credentials_json: '${{ secrets.CREDENTIALS }}'
 
 
