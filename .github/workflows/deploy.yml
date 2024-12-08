@@ -12,14 +12,15 @@ jobs:
     - id: 'auth'
       uses: 'google-github-actions/auth@v2'
       with:
-        project_id: 'my-project'
-        workload_identity_provider: 'projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
+        project_id: 'Experimental'
+        credentials_json: '${{ secrets.CREDENTIALS }}'
+
 
     - id: 'deploy'
       uses: 'google-github-actions/deploy-cloud-functions@v3'
       timeout-minutes: 10
       with:
-        name: 'my-function'
+        name: '${{ secrets.FUNCTION_NAME }}'
         runtime: 'nodejs22'
 
     # Example of using the output
